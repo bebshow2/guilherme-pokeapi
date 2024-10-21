@@ -1,11 +1,11 @@
-
 @import "header.css";
 
-main{
+main {
     height: 100vh;
+    position: relative;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
@@ -14,9 +14,18 @@ body{
     background-size: cover;
 }
 
-.wrapper-content{
+.wrapper-content {
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.loader {
+    display: none; /* Inicialmente oculto */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
 }

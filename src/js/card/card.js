@@ -1,20 +1,21 @@
 import { pokemonList } from "../constants/constants.js"
 
-
-
 export function createCard(pokemon, index) {
-
     console.log(pokemon);
 
     const card = `<div class="card" style="width: 18rem;">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png" class="card-img-top" alt="...">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png" class="card-img-top" alt="${pokemon.name}">
                     <div class="card-body">
                         <h5 class="card-title">${pokemon.name}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's content.</p>
-                        <a href="${pokemon.url}" class="btn btn-primary">Ver mais</a>
+                        <p class="card-text">Clique para mais informações sobre ${pokemon.name}!</p>
+                        <a href="details.html?id=${index}" class="btn btn-primary">Ver mais</a> <!-- Link para a página de detalhes -->
                     </div>
                 </div>`
 
-    pokemonList.innerHTML += card;
+    // Verifica se pokemonList está disponível
+    if (pokemonList) {
+        pokemonList.innerHTML += card;
+    } else {
+        console.error("Elemento pokemonList não encontrado.");
+    }
 }
