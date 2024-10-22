@@ -29,7 +29,7 @@ a {
 }
 
 a:hover {
-    color: #ff5733;
+    color: #000000;
 }
 
 main {
@@ -89,6 +89,6 @@ footer {
 }
 
 .btn-voltar:hover {
-    background-color: #444;
+    background-color: #a3e2f5;
     transform: scale(1.05);
 }
