@@ -1,0 +1,17 @@
+export const typeIcons = {
+    bug: "path/to/icons/bug.png",
+    dark: "path/to/icons/dark.png",
+    dragon: "path/to/icons/dragon.png",
+    electric: "path/to/icons/electric.png",
+    fairy: "path/to/icons/fairy.png",
+    fighting: "path/to/icons/fighting.png",
+    fire: "path/to/icons/fire.png",
+    ghost: "path/to/icons/ghost.png",
+    ice: "path/to/icons/ice.png",
+    normal: "path/to/icons/normal.png",
+    poison: "path/to/icons/poison.png",
+    psychic: "path/to/icons/psychic.png",
+    rock: "path/to/icons/rock.png",
+    steel: "path/to/icons/steel.png",
+    water: "path/to/icons/water.png",
+};

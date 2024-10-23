@@ -34,3 +34,43 @@ body {
     max-width: 300px; /* campo de busca */
     margin: 0 auto; 
 }
+
+.card {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.type-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.type-icon {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
