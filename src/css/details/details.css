@@ -1,3 +1,5 @@
+@import "typeIcons.css";
+
 body {
     font-family: 'Arial', sans-serif;
     background-image: url('/src/assets/images/background-pokemon-field.jpg');
@@ -42,7 +44,7 @@ main {
 }
 
 h2 {
-    color: #ff5733;
+    color: #000000;
 }
 
 h3 {
@@ -91,4 +93,22 @@ footer {
 .btn-voltar:hover {
     background-color: #a3e2f5;
     transform: scale(1.05);
+}
+
+.type-icon {
+    border-radius: 5%;
+    height: 65px;
+    width: 65px;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.icons img {
+    float: left;
+    margin-right: 10px;
 }

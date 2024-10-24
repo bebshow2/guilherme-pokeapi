@@ -1,7 +1,6 @@
 import { pokemonList } from "../constants/constants.js"
 
 export function createCard(pokemon, index) {
-    console.log(pokemon);
 
     const card = `<div class="card" style="width: 18rem;">
                     <img src="https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png" class="card-img-top" alt="${pokemon.name}">
