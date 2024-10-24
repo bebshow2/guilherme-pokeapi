@@ -22,7 +22,6 @@ body {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
-    /* background-color: rgb(90, 188, 253); */
 }
 
 .loader {
