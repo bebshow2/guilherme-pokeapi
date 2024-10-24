@@ -3,6 +3,8 @@
 main {
     height: 100vh;
     position: relative;
+    height: 65vh;
+    overflow: auto;
 }
 
 body {
@@ -12,7 +14,7 @@ body {
     background-image: url("/src/assets/images/background-pokemon-field.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-   
+    overflow: hidden;
 }
 
 .wrapper-content {
@@ -20,6 +22,7 @@ body {
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+    /* background-color: rgb(90, 188, 253); */
 }
 
 .loader {
@@ -74,3 +77,4 @@ body {
     height: 24px;
     margin: 0 5px;
 }
+
