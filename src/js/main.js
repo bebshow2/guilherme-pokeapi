@@ -3,52 +3,74 @@ import { listAllPokemons } from "./fetchApi/fetchfunctions.js";
 
 console.log("carregou!");
 
-const { count, results } = await listAllPokemons();
-console.log("pokemons (results): ", results);
+let results = [];
 
-// Função para renderizar a lista de Pokémon
+async function init() {
+    try {
+        const { results: pokemons } = await listAllPokemons();
+        console.log("Pokémons:", pokemons);
+
+        results = await getAllPokemonDetails(pokemons);
+
+        renderPokemonList(results);
+    } catch (error) {
+        console.error("Erro ao carregar os Pokémons:", error);
+    }
+}
+
+async function getPokemonDetails(pokemon) {
+    const response = await fetch(pokemon.url);
+    return response.json();
+}
+
+async function getAllPokemonDetails(pokemons) {
+    return Promise.all(pokemons.map(getPokemonDetails));
+}
+
+init();
+
 function renderPokemonList(filteredResults) {
     const pokemonList = document.getElementById("pokemon-list");
     pokemonList.innerHTML = '';
-    filteredResults.forEach((pokemon, index) => {
-        createCard(pokemon, index + 1);
-    });
+    if (filteredResults.length === 0) {
+        pokemonList.innerHTML = '<p>Nenhum Pokémon encontrado.</p>';
+    } else {
+        filteredResults.forEach((pokemon, index) => {
+            createCard(pokemon, index + 1);
+        });
+    }
 }
-
-renderPokemonList(results); // Renderiza a lista completa inicialmente
 
 const searchInput = document.getElementById('search-input');
 const clearSearchButton = document.getElementById('clear-search');
 const typeFilter = document.getElementById('type-filter');
 
-// Evento para mostrar ou esconder o botão "X"
-searchInput.addEventListener('input', () => {
-    clearSearchButton.style.display = searchInput.value ? 'block' : 'none';
-    filterPokemonList();
-});
+searchInput.addEventListener('input', filterPokemonList);
+typeFilter.addEventListener('change', filterPokemonList);
 
-// Evento para limpar a caixa de texto
 clearSearchButton.addEventListener('click', () => {
     searchInput.value = '';
     clearSearchButton.style.display = 'none';
-    filterPokemonList(); // Renderiza a lista completa
+    renderPokemonList(results);
 });
 
-// Evento para filtrar por tipo
-typeFilter.addEventListener('change', () => {
-    filterPokemonList();
-});
-
-// Função para filtrar a lista de Pokémon
 function filterPokemonList() {
     const searchTerm = searchInput.value.toLowerCase();
     const selectedType = typeFilter.value;
 
+    console.log("Termo de busca:", searchTerm);
+    console.log("Tipo selecionado:", selectedType);
+
     const filteredResults = results.filter(pokemon => {
         const matchesSearch = pokemon.name.toLowerCase().includes(searchTerm);
-        const matchesType = selectedType ? pokemon.types.some(type => type.type.name === selectedType) : true;
+        const matchesType = selectedType ? 
+            (pokemon.types && Array.isArray(pokemon.types) && pokemon.types.some(type => type.type.name === selectedType)) : true;
+
+        console.log("Pokémon:", pokemon.name, "Matches Search:", matchesSearch, "Matches Type:", matchesType);
+
         return matchesSearch && matchesType;
     });
 
+    console.log("Resultados filtrados:", filteredResults);
     renderPokemonList(filteredResults);
 }
