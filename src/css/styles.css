@@ -3,7 +3,7 @@
 main {
     height: 100vh;
     position: relative;
-    height: 65vh;
+    height: 49vh;
     overflow: auto;
 }
 
@@ -20,7 +20,7 @@ body {
 .wrapper-content {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
@@ -79,3 +79,22 @@ body {
     margin: 0 5px;
 }
 
+.header-content {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-select {
+    display: inline-block;
+    width: auto; 
+}
+
+#clear-search {
+    background-color: white;
+    border: 1px solid #ced4da;
+    color: black;
+}
+
+#clear-search:hover {
+    background-color: #e9ecef;
+}
