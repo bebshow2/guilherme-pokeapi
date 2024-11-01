@@ -74,3 +74,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull r
 
 Sinta-se à vontade para adaptar qualquer parte conforme suas preferências!
 
+![Prototipo](src/assets/images/prototipo.png)
