@@ -20,7 +20,8 @@ async function init() {
 
 async function getPokemonDetails(pokemon) {
     const response = await fetch(pokemon.url);
-    return response.json();
+    const data = await response.json();
+    return { id: data.id, ...data }; // Inclui o ID no retorno
 }
 
 async function getAllPokemonDetails(pokemons) {
@@ -36,7 +37,7 @@ function renderPokemonList(filteredResults) {
         pokemonList.innerHTML = '<p>Nenhum Pokémon encontrado.</p>';
     } else {
         filteredResults.forEach(pokemon => {
-            createCard(pokemon);
+            createCard(pokemon); // Passa o Pokémon completo
         });
     }
 }
