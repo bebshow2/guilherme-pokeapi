@@ -1,20 +1,23 @@
 @import "header.css";
 
 main {
-    height: 100vh;
+    height: auto;
+    min-height: 47vh;
     position: relative;
-    height: 49vh;
     overflow: auto;
+    padding: 20px;
 }
 
 body {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
-    background-image: url("/src/assets/images/background-pokemon-field.jpg");
+    background-image: url("/src/assets/images/fundo.png");
     background-repeat: no-repeat;
     background-size: cover;
-    overflow: hidden;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .wrapper-content {
@@ -22,6 +25,8 @@ body {
     justify-content: center;
     gap: 15px;
     flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .loader {
@@ -33,16 +38,39 @@ body {
     font-size: 1.5rem;
 }
 
-
 .input-group {
-    max-width: 300px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto; 
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.form-select,
+#search-input {
+    width: 100%;
+    max-width: 300px;
+}
+
+#clear-search {
+    background-color: white;
+    border: 1px solid #ced4da;
+    color: black;
+}
+
+#clear-search:hover {
+    background-color: #e9ecef;
 }
 
 .card {
-    border: 2px solid #ccc;
+    background-color: antiquewhite;
+    border: 2px solid #000000;
     border-radius: 10px;
     transition: transform 0.2s;
+    width: 100%;
+    max-width: 250px;
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -89,12 +117,63 @@ body {
     width: auto; 
 }
 
-#clear-search {
-    background-color: white;
-    border: 1px solid #ced4da;
-    color: black;
+@media (max-width: 768px) {
+    .header-logo {
+        max-width: 80%;
+        height: auto; 
+        margin-bottom: 20px; 
+    }
+
+    .wrapper-content {
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+
+    .input-group {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    #search-input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #clear-search {
+        display: none;
+    }
 }
 
-#clear-search:hover {
-    background-color: #e9ecef;
+@media (max-width: 576px) {
+    .header-logo {
+        max-width: 60%; 
+        height: auto; 
+        margin-bottom: 20px; 
+    }
+    
+    .header-content {
+        padding: 10px;
+    }
+
+    .card {
+        max-width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .form-select {
+        width: 100%;
+    }
+
+    .input-group {
+        max-width: 90%;
+    }
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
 }

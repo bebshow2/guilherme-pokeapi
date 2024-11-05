@@ -1,65 +1,193 @@
 body {
-    /* background-color: #f8f9fa;  */
-    font-family: 'Arial', sans-serif; 
-    background-image: url("/src/assets/images/background-pokemon-field.jpg");
-    background-repeat: no-repeat;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(to right, #6a11cb, #2575fc);
     background-size: cover;
+    color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
 }
 
 .container {
-    max-width: 800px; 
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 header {
-    margin-bottom: 30px; 
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
 }
 
 h1 {
-    color: #007bff; 
-    font-weight: bold; 
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-image: linear-gradient(to right, #fbbd08, #ff6f61);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-bottom: 20px;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 5px;
+    background-color: #fff;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+.btn-secondary {
+    background-color: #ff6f61;
+    border-color: #ff6f61;
+    color: white;
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #fbbd08;
+    border-color: #fbbd08;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
 .pokemon-details {
-    background-color: #ffffff; 
-    border-radius: 0.5rem; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
-    padding: 30px; 
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 1rem;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    align-items: center;
+    transition: all 0.3s ease;
+    max-width: 800px;  
+    width: 100%; 
 }
 
 .pokemon-details img {
     max-width: 100%;
-    border-radius: 0.5rem;
-    margin-bottom: 20px; 
+    border-radius: 1rem;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 h2 {
-    color: #333; 
-    margin-bottom: 10px; 
+    color: #2d3748;
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
 h3 {
-    color: #666; 
-    margin-top: 20px; 
+    color: #4a5568;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.pokemon-details p,
+.pokemon-details ul li,
+.pokemon-details h3 {
+    color: #000;
 }
 
 ul.statistics {
     list-style-type: none;
-    padding: 0; 
+    padding: 0;
+    margin-top: 20px;
 }
 
 ul.statistics li {
-    background: #f1f1f1;
-    padding: 10px; 
-    margin-bottom: 5px; 
-    border-radius: 0.3rem; 
+    background: rgba(0, 0, 0, 0.05);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #2d3748;
 }
 
-.btn-secondary {
-    background-color: #0056b3; 
-    border-color: #0056b3; 
+ul.statistics li:nth-child(even) {
+    background: rgba(0, 0, 0, 0.07);
 }
 
-.btn-secondary:hover {
-    background-color: #004494;
-    border-color: #004494; 
+ul.statistics li span {
+    font-weight: 700;
+    color: #007bff;
+}
+
+ul.statistics li:hover {
+    background: #640f0f7e;
+    color: white;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .pokemon-details {
+        padding: 30px;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .btn-secondary {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .pokemon-details {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .btn-secondary {
+        font-size: 0.9rem;
+        padding: 8px 20px;
+    }
 }
