@@ -6,7 +6,7 @@ export function createCard(pokemon) {
                     <div class="card-body">
                         <h5 class="card-title">${pokemon.name}</h5>
                         <p class="card-text">${pokemon.types.map(type => type.type.name).join(', ')}</p> <!-- Texto da tipagem -->
-                        <a href="details.html?id=${pokemon.id}" class="btn btn-primary">Ver mais</a>
+                        <a href="details.html?id=${pokemon.id}" class="btn btn-primary">Sobre</a>
                     </div>
                 </div>`;
 

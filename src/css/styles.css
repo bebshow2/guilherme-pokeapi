@@ -117,6 +117,19 @@ body {
     width: auto; 
 }
 
+.btn-primary {
+    background-color: black;
+    border: white;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border: black;
+    color: black;
+}
+
+
 @media (max-width: 768px) {
     .header-logo {
         max-width: 80%;
