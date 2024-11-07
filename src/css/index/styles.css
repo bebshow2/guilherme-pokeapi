@@ -1,0 +1,86 @@
+@import "header/header.css";
+@import "mobile/mobile.css";
+@import "card/card.css";
+
+/* GERAL */
+
+body {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    background-image: url("/src/assets/images/fundo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* BUSCAR POKEMON */
+
+.input-group {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto; 
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.form-select,
+#search-input {
+    width: 100%;
+    max-width: 300px;
+}
+
+#clear-search {
+    background-color: white;
+    border: 1px solid #ced4da;
+    color: black;
+}
+
+#clear-search:hover {
+    background-color: #e9ecef;
+}
+
+/* FILTRO DE TIPAGEM */
+
+.form-select {
+    display: inline-block;
+    width: auto; 
+}
+
+/* BOTOES */
+
+.btn-primary {
+    background-color: black;
+    border: white;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: white;
+    border: black;
+    color: black;
+}
+
+/* MAIN */
+
+main {
+    height: auto;
+    min-height: 47vh;
+    position: relative;
+    overflow: auto;
+    padding: 20px;
+}
+
+/* CARDS */
+
+.wrapper-content {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}

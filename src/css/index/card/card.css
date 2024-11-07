@@ -1,0 +1,47 @@
+.card {
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #000000;
+    border-radius: 10px;
+    transition: transform 0.2s;
+    width: 100%;
+    max-width: 250px;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-title span {
+    font-size: 1rem;
+    color: #FFCB05;
+    margin-right: 5px;
+    font-weight: normal;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+}
+
+.card-title .badge {
+    margin-right: 10px;
+}
+
+.card-text {
+    color: #666;
+    margin-bottom: 15px;
+}
