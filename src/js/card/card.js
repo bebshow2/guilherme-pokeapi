@@ -1,10 +1,12 @@
-import { pokemonList } from "../constants/constants.js"
-
+// Função que cria um card para cada pokémon
 export function createCard(pokemon) {
+    // URL da imagem do pokémon
     const imageUrl = `https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png`;
 
+    // Formata o número do pokémon para ter 3 dígitos
     const pokeNumber = pokemon.id.toString().padStart(3, '0');
 
+    // Cria o código HTML do card
     const card = `
         <div class="card" style="width: 18rem;">
             <img src="${imageUrl}" class="card-img-top" alt="${pokemon.name}">
@@ -20,10 +22,11 @@ export function createCard(pokemon) {
         </div>
     `;
 
+    // Encontra o elemento onde os cards serão adicionados, adiciona o card a lista, caso nao encontre ele exibe o console.error
     const pokemonList = document.getElementById("pokemon-list");
 
     if (pokemonList) {
-        pokemonList.innerHTML += card;
+        pokemonList.innerHTML += card; 
     } else {
         console.error("Elemento pokemonList não encontrado.");
     }
