@@ -1,6 +1,6 @@
-import { createCard } from "./card/card.js";
-import { listAllPokemons } from "./fetchApi/fetchfunctions.js";
-import { urlPokeApi } from "./constants/constants.js";
+import { createCard } from "card/card.js";
+import { listAllPokemons } from "fetchApi/fetchfunctions.js";
+import { urlPokeApi } from "constants/constants.js";
 
 let results = [];
 let loading = false;
