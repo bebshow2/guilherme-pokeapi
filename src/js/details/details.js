@@ -1,3 +1,6 @@
+import { urlPokeApi } from "../constants/constants.js";
+import showError from "../errors/errors.js";
+
 /*Função para buscar detalhes de um pokémon específico, na 4 tem a requisição para pegar os dados do pokémon, se da erro ele lança exceção, na 7 converte resposta em JSON e depois 
 exibe os detalhes na página*/  
 async function fetchPokemonDetails(id) {
