@@ -1,5 +1,5 @@
 import { pokemonList } from "../constants/constants.js"
-// Função que cria um card para cada pokémon
+
 export function createCard(pokemon) {
     // URL da imagem do pokémon
     const imageUrl = `https://img.pokemondb.net/sprites/home/normal/${pokemon.name}.png`;
