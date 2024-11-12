@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 40px;
-    background-image: url("../../src/assets/images/fundo.png");
+    background-image: url("../../assets/images/fundo.png");
     background-repeat: no-repeat;
     background-size: cover;
     overflow-x: hidden;
