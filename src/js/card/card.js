@@ -1,4 +1,4 @@
-import { pokemonList } from "../constants/constants.js"
+import { pokemonList } from "../constants/constants.js";
 
 export function createCard(pokemon) {
     // URL da imagem do pokémon
